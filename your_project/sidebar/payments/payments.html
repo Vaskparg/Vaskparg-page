@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments - CommunityGate</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="payments.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="threejs-background"></div>
+    <header class="header">
+        <h1 class="header-title">CommunityGate</h1>
+        <nav>
+            <ul>
+                <li><a href="../../login.html">Login</a></li>
+                <li><a href="../../signup.html">Signup</a></li>
+                <li class="user-profile">
+                    <a href="#"><i class="fas fa-user-circle"></i> John Doe <i class="fas fa-angle-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#"><i class="fas fa-user"></i> Profile</a>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="../../login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="sidebar">
+        <ul>
+            <li><a href="../../index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="../announcements/announcements.html"><i class="fas fa-bullhorn"></i> Announcements</a></li>
+            <li class="active"><a href="payments.html"><i class="fas fa-money-bill-wave"></i> Payments</a></li>
+            <li><a href="../facilities/facilities.html"><i class="fas fa-calendar-alt"></i> Facility Booking</a></li>
+            <li><a href="../visitors/visitors.html"><i class="fas fa-user-friends"></i> Visitor Management</a></li>
+            <li><a href="../complaints/complaints.html"><i class="fas fa-tools"></i> Service Requests</a></li>
+            <li><a href="../directory/directory.html"><i class="fas fa-address-book"></i> Resident Directory</a></li>
+            <li><a href="../services/services.html"><i class="fas fa-concierge-bell"></i> Local Services</a></li>
+            <li><a href="../forum/forum.html"><i class="fas fa-comments"></i> Community Forum</a></li>
+        </ul>
+    </div>
+
+    <main class="main-content">
+        <div class="page-header">
+            <h1><i class="fas fa-money-bill-wave"></i> Payments</h1>
+            <div class="page-actions">
+                <button class="action-btn primary"><i class="fas fa-plus"></i> New Payment</button>
+                <div class="filter-container">
+                    <select id="payment-filter">
+                        <option value="all">All Payments</option>
+                        <option value="pending">Pending</option>
+                        <option value="paid">Paid</option>
+                        <option value="overdue">Overdue</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="payment-summary">
+            <div class="summary-card">
+                <div class="summary-icon">
+                    <i class="fas fa-wallet"></i>
+                </div>
+                <div class="summary-details">
+                    <h3>Total Due</h3>
+                    <p class="amount">₹5,500</p>
+                </div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="summary-details">
+                    <h3>Paid This Month</h3>
+                    <p class="amount">₹2,500</p>
+                </div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-icon">
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <div class="summary-details">
+                    <h3>Overdue</h3>
+                    <p class="amount">₹0</p>
+                </div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-icon">
+                    <i class="fas fa-history"></i>
+                </div>
+                <div class="summary-details">
+                    <h3>Next Due Date</h3>
+                    <p>May 10, 2025</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="payment-tabs">
+            <button class="tab-btn active" data-tab="pending">Pending Bills</button>
+            <button class="tab-btn" data-tab="history">Payment History</button>
+            <button class="tab-btn" data-tab="receipts">Receipts</button>
+        </div>
+
+        <div class="tab-content active" id="pending-tab">
+            <div class="payment-list">
+                <div class="payment-card pending">
+                    <div class="payment-details">
+                        <h3>Maintenance Fee - April 2025</h3>
+                        <p class="payment-description">Monthly maintenance charges for April 2025</p>
+                        <div class="payment-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Due: Apr 10, 2025</span>
+                            <span><i class="fas fa-tag"></i> Maintenance</span>
+                        </div>
+                    </div>
+                    <div class="payment-amount">
+                        <p class="amount">₹2,500</p>
+                        <span class="status pending">Pending</span>
+                        <button class="pay-now-btn">Pay Now</button>
+                    </div>
+                </div>
+
+                <div class="payment-card pending">
+                    <div class="payment-details">
+                        <h3>Water Charges - Q2 2025</h3>
+                        <p class="payment-description">Quarterly water charges (April-June 2025)</p>
+                        <div class="payment-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Due: Apr 15, 2025</span>
+                            <span><i class="fas fa-tag"></i> Utilities</span>
+                        </div>
+                    </div>
+                    <div class="payment-amount">
+                        <p class="amount">₹1,800</p>
+                        <span class="status pending">Pending</span>
+                        <button class="pay-now-btn">Pay Now</button>
+                    </div>
+                </div>
+
+                <div class="payment-card pending">
+                    <div class="payment-details">
+                        <h3>Sinking Fund - Annual</h3>
+                        <p class="payment-description">Annual contribution to society sinking fund</p>
+                        <div class="payment-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Due: Apr 30, 2025</span>
+                            <span><i class="fas fa-tag"></i> Fund</span>
+                        </div>
+                    </div>
+                    <div class="payment-amount">
+                        <p class="amount">₹1,200</p>
+                        <span class="status pending">Pending</span>
+                        <button class="pay-now-btn">Pay Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="history-tab">
+            <div class="payment-list">
+                <div class="payment-card paid">
+                    <div class="payment-details">
+                        <h3>Maintenance Fee - March 2025</h3>
+                        <p class="payment-description">Monthly maintenance charges for March 2025</p>
+                        <div class="payment-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Paid: Mar 8, 2025</span>
+                            <span><i class="fas fa-tag"></i> Maintenance</span>
+                            <span><i class="fas fa-credit-card"></i> UPI</span>
+                        </div>
+                    </div>
+                    <div class="payment-amount">
+                        <p class="amount">₹2,500</p>
+                        <span class="status paid">Paid</span>
+                        <button class="view-receipt-btn">View Receipt</button>
+                    </div>
+                </div>
+
+                <div class="payment-card paid">
+                    <div class="payment-details">
+                        <h3>Parking Fee - Annual</h3>
+                        <p class="payment-description">Annual parking charges for 2025</p>
+                        <div class="payment-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Paid: Feb 15, 2025</span>
+                            <span><i class="fas fa-tag"></i> Parking</span>
+                            <span><i class="fas fa-credit-card"></i> Net Banking</span>
+                        </div>
+                    </div>
+                    <div class="payment-amount">
+                        <p class="amount">₹5,000</p>
+                        <span class="status paid">Paid</span>
+                        <button class="view-receipt-btn">View Receipt</button>
+                    </div>
+                </div>
+
+                <div class="payment-card paid">
+                    <div class="payment-details">
+                        <h3>Maintenance Fee - February 2025</h3>
+                        <p class="payment-description">Monthly maintenance charges for February 2025</p>
+                        <div class="payment-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Paid: Feb 5, 2025</span>
+                            <span><i class="fas fa-tag"></i> Maintenance</span>
+                            <span><i class="fas fa-credit-card"></i> UPI</span>
+                        </div>
+                    </div>
+                    <div class="payment-amount">
+                        <p class="amount">₹2,500</p>
+                        <span class="status paid">Paid</span>
+                        <button class="view-receipt-btn">View Receipt</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="receipts-tab">
+            <div class="receipts-list">
+                <div class="receipt-card">
+                    <div class="receipt-icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <div class="receipt-details">
+                        <h3>Maintenance Fee - March 2025</h3>
+                        <p>Payment Date: Mar 8, 2025</p>
+                        <p>Amount: ₹2,500</p>
+                    </div>
+                    <div class="receipt-actions">
+                        <button class="download-btn"><i class="fas fa-download"></i> Download</button>
+                        <button class="view-btn"><i class="fas fa-eye"></i> View</button>
+                    </div>
+                </div>
+
+                <div class="receipt-card">
+                    <div class="receipt-icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <div class="receipt-details">
+                        <h3>Parking Fee - Annual 2025</h3>
+                        <p>Payment Date: Feb 15, 2025</p>
+                        <p>Amount: ₹5,000</p>
+                    </div>
+                    <div class="receipt-actions">
+                        <button class="download-btn"><i class="fas fa-download"></i> Download</button>
+                        <button class="view-btn"><i class="fas fa-eye"></i> View</button>
+                    </div>
+                </div>
+
+                <div class="receipt-card">
+                    <div class="receipt-icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <div class="receipt-details">
+                        <h3>Maintenance Fee - February 2025</h3>
+                        <p>Payment Date: Feb 5, 2025</p>
+                        <p>Amount: ₹2,500</p>
+                    </div>
+                    <div class="receipt-actions">
+                        <button class="download-btn"><i class="fas fa-download"></i> Download</button>
+                        <button class="view-btn"><i class="fas fa-eye"></i> View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Modal -->
+        <div class="modal" id="payment-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Make Payment</h2>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="payment-info">
+                        <h3 id="payment-title">Maintenance Fee - April 2025</h3>
+                        <p class="amount" id="payment-amount">₹2,500</p>
+                    </div>
+                    <div class="payment-methods">
+                        <h4>Select Payment Method</h4>
+                        <div class="method-options">
+                            <div class="method-option active">
+                                <i class="fas fa-qrcode"></i>
+                                <span>UPI</span>
+                            </div>
+                            <div class="method-option">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Card</span>
+                            </div>
+                            <div class="method-option">
+                                <i class="fas fa-university"></i>
+                                <span>Net Banking</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-upi-section">
+                        <div class="upi-qr">
+                            <img src="https://via.placeholder.com/200x200?text=QR+Code" alt="UPI QR Code">
+                        </div>
+                        <p>Scan the QR code with any UPI app to pay</p>
+                        <div class="upi-input">
+                            <input type="text" placeholder="Enter UPI ID">
+                            <button>Verify</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="cancel-btn">Cancel</button>
+                    <button class="proceed-btn">Proceed to Pay</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 CommunityGate. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../../script.js"></script>
+    <script src="payments.js"></script>
+</body>
+</html>

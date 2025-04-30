@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CommunityGate</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="threejs-background"></div>
+    <div class="login-container">
+        <div class="logo-container">
+            <h1>CommunityGate</h1>
+            <p>Your Community, Connected</p>
+        </div>
+        <h2>Login to Your Account</h2>
+        <div class="role-selector">
+            <div class="role-option active" data-role="resident">
+                <i class="fas fa-home"></i>
+                <span>Resident</span>
+            </div>
+            <div class="role-option" data-role="admin">
+                <i class="fas fa-user-shield"></i>
+                <span>Admin</span>
+            </div>
+            <div class="role-option" data-role="security">
+                <i class="fas fa-shield-alt"></i>
+                <span>Security</span>
+            </div>
+        </div>
+        <form action="login_process.php" method="POST">
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <input type="hidden" name="role" value="resident" id="role-input">
+            <div class="remember-forgot">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit">Login <i class="fas fa-sign-in-alt"></i></button>
+        </form>
+        <div class="otp-login">
+            <span>Or login with</span>
+            <button type="button" class="otp-button">
+                <i class="fas fa-mobile-alt"></i> OTP
+            </button>
+        </div>
+        <p class="signup-link">Don't have an account? <a href="signup.html">Signup</a></p>
+        <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

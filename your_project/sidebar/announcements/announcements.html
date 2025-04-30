@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements - CommunityGate</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="announcements.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="threejs-background"></div>
+    <header class="header">
+        <h1 class="header-title">CommunityGate</h1>
+        <nav>
+            <ul>
+                <li><a href="../../login.html">Login</a></li>
+                <li><a href="../../signup.html">Signup</a></li>
+                <li class="user-profile">
+                    <a href="#"><i class="fas fa-user-circle"></i> John Doe <i class="fas fa-angle-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#"><i class="fas fa-user"></i> Profile</a>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="../../login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="sidebar">
+        <ul>
+            <li><a href="../../index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li class="active"><a href="announcements.html"><i class="fas fa-bullhorn"></i> Announcements</a></li>
+            <li><a href="../payments/payments.html"><i class="fas fa-money-bill-wave"></i> Payments</a></li>
+            <li><a href="../facilities/facilities.html"><i class="fas fa-calendar-alt"></i> Facility Booking</a></li>
+            <li><a href="../visitors/visitors.html"><i class="fas fa-user-friends"></i> Visitor Management</a></li>
+            <li><a href="../complaints/complaints.html"><i class="fas fa-tools"></i> Service Requests</a></li>
+            <li><a href="../directory/directory.html"><i class="fas fa-address-book"></i> Resident Directory</a></li>
+            <li><a href="../services/services.html"><i class="fas fa-concierge-bell"></i> Local Services</a></li>
+            <li><a href="../forum/forum.html"><i class="fas fa-comments"></i> Community Forum</a></li>
+        </ul>
+    </div>
+
+    <main class="main-content">
+        <div class="page-header">
+            <h1><i class="fas fa-bullhorn"></i> Announcements</h1>
+            <div class="page-actions">
+                <div class="search-container">
+                    <input type="text" placeholder="Search announcements..." id="announcement-search">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-container">
+                    <select id="announcement-filter">
+                        <option value="all">All Categories</option>
+                        <option value="general">General</option>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="events">Events</option>
+                        <option value="emergency">Emergency</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="announcements-container">
+            <div class="announcement-card emergency">
+                <div class="announcement-header">
+                    <span class="announcement-category">Emergency</span>
+                    <span class="announcement-date">Apr 8, 2025</span>
+                </div>
+                <h2>Water Supply Interruption</h2>
+                <p>There will be a scheduled water supply interruption on April 10th from 10 AM to 2 PM due to maintenance work. Please store water in advance for your needs during this period.</p>
+                <div class="announcement-footer">
+                    <span class="announcement-author">Posted by: Admin</span>
+                    <button class="mark-read-btn"><i class="fas fa-check"></i> Mark as Read</button>
+                </div>
+            </div>
+
+            <div class="announcement-card general">
+                <div class="announcement-header">
+                    <span class="announcement-category">General</span>
+                    <span class="announcement-date">Apr 5, 2025</span>
+                </div>
+                <h2>Community Meeting</h2>
+                <p>Annual community meeting will be held on April 15th at 6 PM in the clubhouse. All residents are requested to attend. The agenda includes discussion on annual maintenance budget, security enhancements, and election of new committee members.</p>
+                <div class="announcement-attachments">
+                    <a href="#" class="attachment-link"><i class="fas fa-file-pdf"></i> Meeting_Agenda.pdf</a>
+                </div>
+                <div class="announcement-footer">
+                    <span class="announcement-author">Posted by: Secretary</span>
+                    <button class="mark-read-btn"><i class="fas fa-check"></i> Mark as Read</button>
+                </div>
+            </div>
+
+            <div class="announcement-card events">
+                <div class="announcement-header">
+                    <span class="announcement-category">Events</span>
+                    <span class="announcement-date">Apr 3, 2025</span>
+                </div>
+                <h2>Earth Day Celebration</h2>
+                <p>Join us for Earth Day celebration on April 22nd from 10 AM to 12 PM at the community garden. Activities include tree planting, recycling workshop, and environmental awareness session for children. Refreshments will be provided.</p>
+                <div class="announcement-attachments">
+                    <a href="#" class="attachment-link"><i class="fas fa-image"></i> Earth_Day_Poster.jpg</a>
+                </div>
+                <div class="announcement-footer">
+                    <span class="announcement-author">Posted by: Events Committee</span>
+                    <button class="mark-read-btn"><i class="fas fa-check"></i> Mark as Read</button>
+                </div>
+            </div>
+
+            <div class="announcement-card maintenance">
+                <div class="announcement-header">
+                    <span class="announcement-category">Maintenance</span>
+                    <span class="announcement-date">Mar 28, 2025</span>
+                </div>
+                <h2>Elevator Maintenance</h2>
+                <p>The elevator in Block B will undergo maintenance on March 30th from 9 AM to 5 PM. Please use the stairs during this period. We apologize for any inconvenience caused.</p>
+                <div class="announcement-footer">
+                    <span class="announcement-author">Posted by: Maintenance Team</span>
+                    <button class="mark-read-btn read"><i class="fas fa-check"></i> Read</button>
+                </div>
+            </div>
+
+            <div class="announcement-card general">
+                <div class="announcement-header">
+                    <span class="announcement-category">General</span>
+                    <span class="announcement-date">Mar 25, 2025</span>
+                </div>
+                <h2>New Security Personnel</h2>
+                <p>We are pleased to inform you that we have hired new security personnel for the night shift. Mr. Rajesh Kumar will be joining our security team from April 1st. Please cooperate with him as you would with our other security staff.</p>
+                <div class="announcement-footer">
+                    <span class="announcement-author">Posted by: Admin</span>
+                    <button class="mark-read-btn read"><i class="fas fa-check"></i> Read</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <button class="pagination-btn active">1</button>
+            <button class="pagination-btn">2</button>
+            <button class="pagination-btn">3</button>
+            <button class="pagination-btn next"><i class="fas fa-angle-right"></i></button>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 CommunityGate. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../../script.js"></script>
+    <script src="announcements.js"></script>
+</body>
+</html>

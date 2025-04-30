@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Requests - CommunityGate</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="complaints.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="threejs-background"></div>
+    <header class="header">
+        <h1 class="header-title">CommunityGate</h1>
+        <nav>
+            <ul>
+                <li><a href="../../login.html">Login</a></li>
+                <li><a href="../../signup.html">Signup</a></li>
+                <li class="user-profile">
+                    <a href="#"><i class="fas fa-user-circle"></i> John Doe <i class="fas fa-angle-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#"><i class="fas fa-user"></i> Profile</a>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="../../login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="sidebar">
+        <ul>
+            <li><a href="../../index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="../announcements/announcements.html"><i class="fas fa-bullhorn"></i> Announcements</a></li>
+            <li><a href="../payments/payments.html"><i class="fas fa-money-bill-wave"></i> Payments</a></li>
+            <li><a href="../facilities/facilities.html"><i class="fas fa-calendar-alt"></i> Facility Booking</a></li>
+            <li><a href="../visitors/visitors.html"><i class="fas fa-user-friends"></i> Visitor Management</a></li>
+            <li class="active"><a href="complaints.html"><i class="fas fa-tools"></i> Service Requests</a></li>
+            <li><a href="../directory/directory.html"><i class="fas fa-address-book"></i> Resident Directory</a></li>
+            <li><a href="../services/services.html"><i class="fas fa-concierge-bell"></i> Local Services</a></li>
+            <li><a href="../forum/forum.html"><i class="fas fa-comments"></i> Community Forum</a></li>
+        </ul>
+    </div>
+
+    <main class="main-content">
+        <div class="page-header">
+            <h1><i class="fas fa-tools"></i> Service Requests</h1>
+            <div class="page-actions">
+                <button class="action-btn primary" id="new-request-btn"><i class="fas fa-plus"></i> New Request</button>
+                <div class="filter-container">
+                    <select id="request-filter">
+                        <option value="all">All Requests</option>
+                        <option value="open">Open</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="resolved">Resolved</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="request-stats">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-clipboard-list"></i>
+                </div>
+                <div class="stat-details">
+                    <h3>Total Requests</h3>
+                    <p class="stat-count">12</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <div class="stat-details">
+                    <h3>Open</h3>
+                    <p class="stat-count">3</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="stat-details">
+                    <h3>In Progress</h3>
+                    <p class="stat-count">2</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="stat-details">
+                    <h3>Resolved</h3>
+                    <p class="stat-count">7</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="request-tabs">
+            <button class="tab-btn active" data-tab="all">All Requests</button>
+            <button class="tab-btn" data-tab="open">Open</button>
+            <button class="tab-btn" data-tab="in-progress">In Progress</button>
+            <button class="tab-btn" data-tab="resolved">Resolved</button>
+        </div>
+
+        <div class="tab-content active" id="all-tab">
+            <div class="request-list">
+                <div class="request-card open">
+                    <div class="request-status">Open</div>
+                    <div class="request-details">
+                        <h3>Leaking Tap in Kitchen</h3>
+                        <p class="request-category"><i class="fas fa-tag"></i> Plumbing</p>
+                        <div class="request-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Reported: Apr 8, 2025</span>
+                            <span><i class="fas fa-clock"></i> Time: 10:30 AM</span>
+                            <span><i class="fas fa-exclamation-circle"></i> Priority: Medium</span>
+                        </div>
+                        <p class="request-description">The kitchen sink tap is leaking continuously. Water is dripping even when the tap is closed tightly.</p>
+                    </div>
+                    <div class="request-actions">
+                        <button class="edit-btn"><i class="fas fa-edit"></i> Edit</button>
+                        <button class="cancel-btn"><i class="fas fa-times"></i> Cancel</button>
+                        <button class="details-btn"><i class="fas fa-info-circle"></i> Details</button>
+                    </div>
+                </div>
+
+                <div class="request-card in-progress">
+                    <div class="request-status">In Progress</div>
+                    <div class="request-details">
+                        <h3>Electrical Outlet Not Working</h3>
+                        <p class="request-category"><i class="fas fa-tag"></i> Electrical</p>
+                        <div class="request-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Reported: Apr 5, 2025</span>
+                            <span><i class="fas fa-clock"></i> Time: 3:45 PM</span>
+                            <span><i class="fas fa-exclamation-circle"></i> Priority: High</span>
+                        </div>
+                        <p class="request-description">The electrical outlet in the living room near the TV is not working. Tried resetting the circuit breaker but still no power.</p>
+                        <div class="request-updates">
+                            <div class="update-item">
+                                <p class="update-time">Apr 6, 2025 - 11:20 AM</p>
+                                <p class="update-text">Electrician scheduled for Apr 10, 2025 between 2 PM and 4 PM.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="request-actions">
+                        <button class="update-btn"><i class="fas fa-comment"></i> Add Update</button>
+                        <button class="details-btn"><i class="fas fa-info-circle"></i> Details</button>
+                    </div>
+                </div>
+
+                <div class="request-card resolved">
+                    <div class="request-status">Resolved</div>
+                    <div class="request-details">
+                        <h3>AC Not Cooling</h3>
+                        <p class="request-category"><i class="fas fa-tag"></i> HVAC</p>
+                        <div class="request-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Reported: Mar 28, 2025</span>
+                            <span><i class="fas fa-clock"></i> Time: 2:15 PM</span>
+                            <span><i class="fas fa-check-circle"></i> Resolved: Apr 2, 2025</span>
+                        </div>
+                        <p class="request-description">The air conditioner in the master bedroom is not cooling properly. It's running but the air is not cold.</p>
+                        <div class="request-updates">
+                            <div class="update-item">
+                                <p class="update-time">Mar 30, 2025 - 9:30 AM</p>
+                                <p class="update-text">Technician scheduled for Apr 1, 2025 between 10 AM and 12 PM.</p>
+                            </div>
+                            <div class="update-item">
+                                <p class="update-time">Apr 1, 2025 - 11:45 AM</p>
+                                <p class="update-text">Technician visited and found refrigerant leak. Repaired and refilled refrigerant.</p>
+                            </div>
+                            <div class="update-item">
+                                <p class="update-time">Apr 2, 2025 - 10:15 AM</p>
+                                <p class="update-text">Follow-up check completed. AC is now cooling properly.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="request-actions">
+                        <button class="feedback-btn"><i class="fas fa-star"></i> Give Feedback</button>
+                        <button class="details-btn"><i class="fas fa-info-circle"></i> Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="open-tab">
+            <div class="request-list">
+                <div class="request-card open">
+                    <div class="request-status">Open</div>
+                    <div class="request-details">
+                        <h3>Leaking Tap in Kitchen</h3>
+                        <p class="request-category"><i class="fas fa-tag"></i> Plumbing</p>
+                        <div class="request-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Reported: Apr 8, 2025</span>
+                            <span><i class="fas fa-clock"></i> Time: 10:30 AM</span>
+                            <span><i class="fas fa-exclamation-circle"></i> Priority: Medium</span>
+                        </div>
+                        <p class="request-description">The kitchen sink tap is leaking continuously. Water is dripping even when the tap is closed tightly.</p>
+                    </div>
+                    <div class="request-actions">
+                        <button class="edit-btn"><i class="fas fa-edit"></i> Edit</button>
+                        <button class="cancel-btn"><i class="fas fa-times"></i> Cancel</button>
+                        <button class="details-btn"><i class="fas fa-info-circle"></i> Details</button>
+                    </div>
+                </div>
+
+                <div class="request-card open">
+                    <div class="request-status">Open</div>
+                    <div class="request-details">
+                        <h3>Broken Window Handle</h3>
+                        <p class="request-category"><i class="fas fa-tag"></i> Carpentry</p>
+                        <div class="request-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Reported: Apr 7, 2025</span>
+                            <span><i class="fas fa-clock"></i> Time: 5:20 PM</span>
+                            <span><i class="fas fa-exclamation-circle"></i> Priority: Low</span>
+                        </div>
+                        <p class="request-description">The handle on the living room window is broken. Unable to open or close the window properly.</p>
+                    </div>
+                    <div class="request-actions">
+                        <button class="edit-btn"><i class="fas fa-edit"></i> Edit</button>
+                        <button class="cancel-btn"><i class="fas fa-times"></i> Cancel</button>
+                        <button class="details-btn"><i class="fas fa-info-circle"></i> Details</button>
+                    </div>
+                </div>
+
+                <div class="request-card open">
+                    <div class="request-status">Open</div>
+                    <div class="request-details">
+                        <h3>Intercom Not Working</h3>
+                        <p class="request-category"><i class="fas fa-tag"></i> Electrical</p>
+                        <div class="request-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Reported: Apr 9, 2025</span>
+                            <span><i class="fas fa-clock"></i> Time: 8:45 AM</span>
+                            <span><i class="fas fa-exclamation-circle"></i> Priority: High</span>
+                        </div>
+                        <p class="request-description">The intercom in my apartment is not working. Cannot hear visitors at the main gate or open the door remotely.</p>
+                    </div>
+                    <div class="request-actions">
+                        <button class="edit-btn"><i class="fas fa-edit"></i> Edit</button>
+                        <button class="cancel-btn"><i class="fas fa-times"></i> Cancel</button>
+                        <button class="details-btn"><i class="fas fa-info-circle"></i> Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="in-progress-tab">
+            <div class="request-list">
+                <div class="request-card in-progress">
+                    <div class="request-status">In Progress</div>
+                    <div class="request-details">
+                        <h3>Electrical Outlet Not Working</h3>
+                        <p class="request-category"><i class="fas fa-tag"></i> Electrical</p>
+                        <div class="request-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Reported: Apr 5, 2025</span>
+                            <span><i class="fas fa-clock"></i> Time: 3:45 PM</span>
+                            <span><i class="fas fa-exclamation-circle"></i> Priority: High</span>
+                        </div>
+                        <p class="request-description">The electrical outlet in the living room near the TV is not working. Tried resetting the circuit breaker but still no power.</p>
+                        <div class="request-updates">
+                            <div class="update-item">
+                                <p class="update-time">Apr 6, 2025 - 11:20 AM</p>
+                                <p class="update-text">Electrician scheduled for Apr 10, 2025 between 2 PM and 4 PM.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="request-actions">
+                        <button class="update-btn"><i class="fas fa-comment"></i> Add Update</button>
+                        <button class="details-btn"><i class="fas fa-info-circle"></i> Details</button>
+                    </div>
+                </div>
+
+                <div class="request-card in-progress">
+                    <div class="request-status">In Progress</div>
+                    <div class="request-details">
+                        <h3>Bathroom Tiles Cracked</h3>
+                        <p class="request-category"><i class="fas fa-tag"></i> Flooring</p>
+                        <div class="request-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Reported: Apr 3, 2025</span>
+                            <span><i class="fas fa-clock"></i> Time: 9:10 AM</span>
+                            <span><i class="fas fa-exclamation-circle"></i> Priority: Medium</span>
+                        </div>
+                        <p class="request-description">Several tiles in the guest bathroom floor are cracked. Concerned about water seepage.</p>
+                        <div class="request-updates">
+                            <div class="update-item">
+                                <p class="update-time">Apr 4, 2025 - 2:30 PM</p>
+                                <p class="update-text">Maintenance team inspected the area. Replacement tiles have been ordered.</p>
+                            </div>
+                            <div class="update-item">
+                                <p class="update-time">Apr 8, 2025 - 10:15 AM</p>
+                                <p class="update-text">Tiles received. Repair scheduled for Apr 12, 2025.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="request-actions">
+                        <button class="update-btn"><i class="fas fa-comment"></i> Add Update</button>
+                        <button class="details-btn"><i class="fas fa-info-circle"></i> Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="resolved-tab">
+            <div class="request-list">
+                <div class="request-card resolved">
+                    <div class="request-status">Resolved</div>
+                    <div class="request-details">
+                        <h3>AC Not Cooling</h3>
+                        <p class="request-category"><i class="fas fa-tag"></i> HVAC</p>
+                        <div class="request-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Reported: Mar 28, 2025</span>
+                            <span><i class="fas fa-clock"></i> Time: 2:15 PM</span>
+                            <span><i class="fas fa-check-circle"></i> Resolved: Apr 2, 2025</span>
+                        </div>
+                        <p class="request-description">The air conditioner in the master bedroom is not cooling properly. It's running but the air is not cold.</p>
+                        <div class="request-updates">
+                            <div class="update-item">
+                                <p class="update-time">Mar 30, 2025 - 9:30 AM</p>
+                                <p class="update-text">Technician scheduled for Apr 1, 2025 between 10 AM and 12 PM.</p>
+                            </div>
+                            <div class="update-item">
+                                <p class="update-time">Apr 1, 2025 - 11:45 AM</p>
+                                <p class="update-text">Technician visited and found refrigerant leak. Repaired and refilled refrigerant.</p>
+                            </div>
+                            <div class="update-item">
+                                <p class="update-time">Apr 2, 2025 - 10:15 AM</p>
+                                <p class="update-text">Follow-up check completed. AC is now cooling properly.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="request-actions">
+                        <button class="feedback-btn"><i class="fas fa-star"></i> Give Feedback</button>
+                        <button class="details-btn"><i class="fas fa-info-circle"></i> Details</button>
+                    </div>
+                </div>
+
+                <div class="request-card resolved">
+                    <div class="request-status">Resolved</div>
+                    <div class="request-details">
+                        <h3>Door Lock Jammed</h3>
+                        <p class="request-category"><i class="fas fa-tag"></i> Locksmith</p>
+                        <div class="request-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Reported: Mar 25, 2025</span>
+                            <span><i class="fas fa-clock"></i> Time: 7:30 PM</span>
+                            <span><i class="fas fa-check-circle"></i> Resolved: Mar 26, 2025</span>
+                        </div>
+                        <p class="request-description">The lock on the main door is jammed. Key turns but the bolt doesn't move.</p>
+                        <div class="request-updates">
+                            <div class="update-item">
+                                <p class="update-time">Mar 26, 2025 - 9:15 AM</p>
+                                <p class="update-text">Locksmith visited and replaced the lock mechanism. New keys provided.</p>
+                            </div>
+                        </div>
+                        <div class="feedback">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="feedback-text">Excellent service! Locksmith arrived promptly and fixed the issue quickly.</p>
+                        </div>
+                    </div>
+                    <div class="request-actions">
+                        <button class="details-btn"><i class="fas fa-info-circle"></i> Details</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pagination">
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn next"><i class="fas fa-angle-right"></i></button>
+            </div>
+        </div>
+
+        <!-- New Request Modal -->
+        <div class="modal" id="request-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>New Service Request</h2>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="request-form">
+                        <div class="form-group">
+                            <label for="request-title">Title</label>
+                            <input type="text" id="request-title" name="title" placeholder="Brief title of the issue" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-category">Category</label>
+                            <select id="request-category" name="category" required>
+                                <option value="">Select Category</option>
+                                <option value="plumbing">Plumbing</option>
+                                <option value="electrical">Electrical</option>
+                                <option value="hvac">HVAC (Heating/Cooling)</option>
+                                <option value="carpentry">Carpentry</option>
+                                <option value="flooring">Flooring</option>
+                                <option value="painting">Painting</option>
+                                <option value="locksmith">Locksmith</option>
+                                <option value="pest-control">Pest Control</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-priority">Priority</label>
+                            <select id="request-priority" name="priority" required>
+                                <option value="low">Low</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="high">High</option>
+                                <option value="emergency">Emergency</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-description">Description</label>
+                            <textarea id="request-description" name="description" placeholder="Detailed description of the issue" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-location">Location</label>
+                            <input type="text" id="request-location" name="location" placeholder="Where is the issue located? (e.g., Kitchen, Bathroom)" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-availability">Preferred Availability</label>
+                            <input type="text" id="request-availability" name="availability" placeholder="When are you available for maintenance visit?">
+                        </div>
+                        <div class="form-group">
+                            <label for="request-photos">Photos (Optional)</label>
+                            <input type="file" id="request-photos" name="photos" multiple accept="image/*">
+                            <p class="form-help">Upload photos of the issue (max 3 images, 5MB each)</p>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="cancel-btn">Cancel</button>
+                    <button class="proceed-btn">Submit Request</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Update Request Modal -->
+        <div class="modal" id="update-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Add Update</h2>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="update-form">
+                        <div class="form-group">
+                            <label for="update-text">Update</label>
+                            <textarea id="update-text" name="update" placeholder="Enter your update or comment" required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="cancel-btn">Cancel</button>
+                    <button class="proceed-btn">Add Update</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feedback Modal -->
+        <div class="modal" id="feedback-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Give Feedback</h2>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="feedback-form">
+                        <div class="form-group">
+                            <label>Rating</label>
+                            <div class="rating-input">
+                                <i class="far fa-star" data-rating="1"></i>
+                                <i class="far fa-star" data-rating="2"></i>
+                                <i class="far fa-star" data-rating="3"></i>
+                                <i class="far fa-star" data-rating="4"></i>
+                                <i class="far fa-star" data-rating="5"></i>
+                            </div>
+                            <input type="hidden" id="rating-value" name="rating" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="feedback-text">Comments</label>
+                            <textarea id="feedback-text" name="feedback" placeholder="Share your experience with the service" required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="cancel-btn">Cancel</button>
+                    <button class="proceed-btn">Submit Feedback</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Request Details Modal -->
+        <div class="modal" id="details-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Request Details</h2>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="details-content">
+                        <div class="details-header">
+                            <h3 id="details-title">Leaking Tap in Kitchen</h3>
+                            <span class="details-status" id="details-status">Open</span>
+                        </div>
+                        <div class="details-meta">
+                            <p><strong>Category:</strong> <span id="details-category">Plumbing</span></p>
+                            <p><strong>Reported:</strong> <span id="details-date">Apr 8, 2025</span></p>
+                            <p><strong>Priority:</strong> <span id="details-priority">Medium</span></p>
+                            <p><strong>Location:</strong> <span id="details-location">Kitchen</span></p>
+                        </div>
+                        <div class="details-description">
+                            <h4>Description</h4>
+                            <p id="details-description">The kitchen sink tap is leaking continuously. Water is dripping even when the tap is closed tightly.</p>
+                        </div>
+                        <div class="details-timeline">
+                            <h4>Timeline</h4>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-icon">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <p class="timeline-date">Apr 8, 2025 - 10:30 AM</p>
+                                        <p class="timeline-text">Request created</p>
+                                    </div>
+                                </div>
+                                <!-- More timeline items will be added dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="close-details-btn">Close</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 CommunityGate. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../../script.js"></script>
+    <script src="complaints.js"></script>
+</body>
+</html>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resident Directory - CommunityGate</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="directory.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="threejs-background"></div>
+    <header class="header">
+        <h1 class="header-title">CommunityGate</h1>
+        <nav>
+            <ul>
+                <li><a href="../../login.html">Login</a></li>
+                <li><a href="../../signup.html">Signup</a></li>
+                <li class="user-profile">
+                    <a href="#"><i class="fas fa-user-circle"></i> John Doe <i class="fas fa-angle-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#"><i class="fas fa-user"></i> Profile</a>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="../../login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="sidebar">
+        <ul>
+            <li><a href="../../index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="../announcements/announcements.html"><i class="fas fa-bullhorn"></i> Announcements</a></li>
+            <li><a href="../payments/payments.html"><i class="fas fa-money-bill-wave"></i> Payments</a></li>
+            <li><a href="../facilities/facilities.html"><i class="fas fa-calendar-alt"></i> Facility Booking</a></li>
+            <li><a href="../visitors/visitors.html"><i class="fas fa-user-friends"></i> Visitor Management</a></li>
+            <li><a href="../complaints/complaints.html"><i class="fas fa-tools"></i> Service Requests</a></li>
+            <li class="active"><a href="directory.html"><i class="fas fa-address-book"></i> Resident Directory</a></li>
+            <li><a href="../services/services.html"><i class="fas fa-concierge-bell"></i> Local Services</a></li>
+            <li><a href="../forum/forum.html"><i class="fas fa-comments"></i> Community Forum</a></li>
+        </ul>
+    </div>
+
+    <main class="main-content">
+        <div class="page-header">
+            <h1><i class="fas fa-address-book"></i> Resident Directory</h1>
+            <div class="page-actions">
+                <div class="search-container">
+                    <input type="text" id="directory-search" placeholder="Search by name, flat, or block...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-container">
+                    <select id="directory-filter">
+                        <option value="all">All Blocks</option>
+                        <option value="A">Block A</option>
+                        <option value="B">Block B</option>
+                        <option value="C">Block C</option>
+                        <option value="D">Block D</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="directory-tabs">
+            <button class="tab-btn active" data-tab="grid">Grid View</button>
+            <button class="tab-btn" data-tab="list">List View</button>
+            <button class="tab-btn" data-tab="favorites">Favorites</button>
+            <button class="tab-btn" data-tab="committee">Committee Members</button>
+        </div>
+
+        <div class="tab-content active" id="grid-tab">
+            <div class="directory-grid">
+                <div class="resident-card" data-block="A" data-flat="101">
+                    <div class="resident-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Resident">
+                    </div>
+                    <div class="resident-details">
+                        <h3>Rajesh Kumar</h3>
+                        <p class="resident-flat"><i class="fas fa-home"></i> A-101</p>
+                        <div class="resident-meta">
+                            <span><i class="fas fa-phone"></i> +91 98765 43210</span>
+                            <span><i class="fas fa-envelope"></i> rajesh.k@example.com</span>
+                        </div>
+                    </div>
+                    <div class="resident-actions">
+                        <button class="action-btn favorite"><i class="far fa-star"></i></button>
+                        <button class="action-btn contact"><i class="fas fa-address-card"></i></button>
+                    </div>
+                </div>
+
+                <div class="resident-card" data-block="A" data-flat="102">
+                    <div class="resident-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Resident">
+                    </div>
+                    <div class="resident-details">
+                        <h3>Priya Sharma</h3>
+                        <p class="resident-flat"><i class="fas fa-home"></i> A-102</p>
+                        <div class="resident-meta">
+                            <span><i class="fas fa-phone"></i> +91 87654 32109</span>
+                            <span><i class="fas fa-envelope"></i> priya.s@example.com</span>
+                        </div>
+                    </div>
+                    <div class="resident-actions">
+                        <button class="action-btn favorite"><i class="far fa-star"></i></button>
+                        <button class="action-btn contact"><i class="fas fa-address-card"></i></button>
+                    </div>
+                </div>
+
+                <div class="resident-card committee" data-block="B" data-flat="201">
+                    <div class="resident-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Resident">
+                        <div class="committee-badge" title="Secretary">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                    </div>
+                    <div class="resident-details">
+                        <h3>Amit Patel</h3>
+                        <p class="resident-flat"><i class="fas fa-home"></i> B-201</p>
+                        <div class="resident-meta">
+                            <span><i class="fas fa-phone"></i> +91 76543 21098</span>
+                            <span><i class="fas fa-envelope"></i> amit.p@example.com</span>
+                        </div>
+                    </div>
+                    <div class="resident-actions">
+                        <button class="action-btn favorite"><i class="far fa-star"></i></button>
+                        <button class="action-btn contact"><i class="fas fa-address-card"></i></button>
+                    </div>
+                </div>
+
+                <div class="resident-card" data-block="B" data-flat="202">
+                    <div class="resident-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Resident">
+                    </div>
+                    <div class="resident-details">
+                        <h3>Neha Singh</h3>
+                        <p class="resident-flat"><i class="fas fa-home"></i> B-202</p>
+                        <div class="resident-meta">
+                            <span><i class="fas fa-phone"></i> +91 65432 10987</span>
+                            <span><i class="fas fa-envelope"></i> neha.s@example.com</span>
+                        </div>
+                    </div>
+                    <div class="resident-actions">
+                        <button class="action-btn favorite"><i class="far fa-star"></i></button>
+                        <button class="action-btn contact"><i class="fas fa-address-card"></i></button>
+                    </div>
+                </div>
+
+                <div class="resident-card committee" data-block="C" data-flat="301">
+                    <div class="resident-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Resident">
+                        <div class="committee-badge" title="President">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                    </div>
+                    <div class="resident-details">
+                        <h3>Vikram Malhotra</h3>
+                        <p class="resident-flat"><i class="fas fa-home"></i> C-301</p>
+                        <div class="resident-meta">
+                            <span><i class="fas fa-phone"></i> +91 54321 09876</span>
+                            <span><i class="fas fa-envelope"></i> vikram.m@example.com</span>
+                        </div>
+                    </div>
+                    <div class="resident-actions">
+                        <button class="action-btn favorite"><i class="far fa-star"></i></button>
+                        <button class="action-btn contact"><i class="fas fa-address-card"></i></button>
+                    </div>
+                </div>
+
+                <div class="resident-card" data-block="C" data-flat="302">
+                    <div class="resident-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Resident">
+                    </div>
+                    <div class="resident-details">
+                        <h3>Sunita Verma</h3>
+                        <p class="resident-flat"><i class="fas fa-home"></i> C-302</p>
+                        <div class="resident-meta">
+                            <span><i class="fas fa-phone"></i> +91 43210 98765</span>
+                            <span><i class="fas fa-envelope"></i> sunita.v@example.com</span>
+                        </div>
+                    </div>
+                    <div class="resident-actions">
+                        <button class="action-btn favorite"><i class="far fa-star"></i></button>
+                        <button class="action-btn contact"><i class="fas fa-address-card"></i></button>
+                    </div>
+                </div>
+
+                <div class="resident-card committee" data-block="D" data-flat="401">
+                    <div class="resident-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Resident">
+                        <div class="committee-badge" title="Treasurer">
+                            <i class="fas fa-money-check-alt"></i>
+                        </div>
+                    </div>
+                    <div class="resident-details">
+                        <h3>Rahul Gupta</h3>
+                        <p class="resident-flat"><i class="fas fa-home"></i> D-401</p>
+                        <div class="resident-meta">
+                            <span><i class="fas fa-phone"></i> +91 32109 87654</span>
+                            <span><i class="fas fa-envelope"></i> rahul.g@example.com</span>
+                        </div>
+                    </div>
+                    <div class="resident-actions">
+                        <button class="action-btn favorite"><i class="far fa-star"></i></button>
+                        <button class="action-btn contact"><i class="fas fa-address-card"></i></button>
+                    </div>
+                </div>
+
+                <div class="resident-card" data-block="D" data-flat="402">
+                    <div class="resident-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Resident">
+                    </div>
+                    <div class="resident-details">
+                        <h3>Anita Desai</h3>
+                        <p class="resident-flat"><i class="fas fa-home"></i> D-402</p>
+                        <div class="resident-meta">
+                            <span><i class="fas fa-phone"></i> +91 21098 76543</span>
+                            <span><i class="fas fa-envelope"></i> anita.d@example.com</span>
+                        </div>
+                    </div>
+                    <div class="resident-actions">
+                        <button class="action-btn favorite"><i class="far fa-star"></i></button>
+                        <button class="action-btn contact"><i class="fas fa-address-card"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pagination">
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn next"><i class="fas fa-angle-right"></i></button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="list-tab">
+            <div class="directory-list">
+                <div class="resident-row" data-block="A" data-flat="101">
+                    <div class="resident-info">
+                        <div class="resident-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Resident">
+                        </div>
+                        <div class="resident-details">
+                            <h3>Rajesh Kumar</h3>
+                            <p class="resident-flat"><i class="fas fa-home"></i> A-101</p>
+                        </div>
+                    </div>
+                    <div class="resident-contact">
+                        <span><i class="fas fa-phone"></i> +91 98765 43210</span>
+                        <span><i class="fas fa-envelope"></i> rajesh.k@example.com</span>
+                    </div>
+                    <div class="resident-actions">
+                        <button class="action-btn favorite"><i class="far fa-star"></i></button>
+                        <button class="action-btn contact"><i class="fas fa-address-card"></i></button>
+                    </div>
+                </div>
+
+                <div class="resident-row" data-block="A" data-flat="102">
+                    <div class="resident-info">
+                        <div class="resident-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Resident">
+                        </div>
+                        <div class="resident-details">
+                            <h3>Priya Sharma</h3>
+                            <p class="resident-flat"><i class="fas fa-home"></i> A-102</p>
+                        </div>
+                    </div>
+                    <div class="resident-contact">
+                        <span><i class="fas fa-phone"></i> +91 87654 32109</span>
+                        <span><i class="fas fa-envelope"></i> priya.s@example.com</span>
+                    </div>
+                    <div class="resident-actions">
+                        <button class="action-btn favorite"><i class="far fa-star"></i></button>
+                        <button class="action-btn contact"><i class="fas fa-address-card"></i></button>
+                    </div>
+                </div>
+
+                <div class="resident-row committee" data-block="B" data-flat="201">
+                    <div class="resident-info">
+                        <div class="resident-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Resident">
+                            <div class="committee-badge" title="Secretary">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                        </div>
+                        <div class="resident-details">
+                            <h3>Amit Patel</h3>
+                            <p class="resident-flat"><i class="fas fa-home"></i> B-201</p>
+                            <p class="committee-role">Secretary</p>
+                        </div>
+                    </div>
+                    <div class="resident-contact">
+                        <span><i class="fas fa-phone"></i> +91 76543 21098</span>
+                        <span><i class="fas fa-envelope"></i> amit.p@example.com</span>
+                    </div>
+                    <div class="resident-actions">
+                        <button class="action-btn favorite"><i class="far fa-star"></i></button>
+                        <button class="action-btn contact"><i class="fas fa-address-card"></i></button>
+                    </div>
+                </div>
+
+                <!-- More resident rows... -->
+                <div class="resident-row committee" data-block="C" data-flat="301">
+                    <div class="resident-info">
+                        <div class="resident-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Resident">
+                            <div class="committee-badge" title="President">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                        </div>
+                        <div class="resident-details">
+                            <h3>Vikram Malhotra</h3>
+                            <p class="resident-flat"><i class="fas fa-home"></i> C-301</p>
+                            <p class="committee-role">President</p>
+                        </div>
+                    </div>
+                    <div class="resident-contact">
+                        <span><i class="fas fa-phone"></i> +91 54321 09876</span>
+                        <span><i class="fas fa-envelope"></i> vikram.m@example.com</span>
+                    </div>
+                    <div class="resident-actions">
+                        <button class="action-btn favorite"><i class="far fa-star"></i></button>
+                        <button class="action-btn contact"><i class="fas fa-address-card"></i></button>
+                    </div>
+                </div>
+
+                <div class="resident-row committee" data-block="D" data-flat="401">
+                    <div class="resident-info">
+                        <div class="resident-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Resident">
+                            <div class="committee-badge" title="Treasurer">
+                                <i class="fas fa-money-check-alt"></i>
+                            </div>
+                        </div>
+                        <div class="resident-details">
+                            <h3>Rahul Gupta</h3>
+                            <p class="resident-flat"><i class="fas fa-home"></i> D-401</p>
+                            <p class="committee-role">Treasurer</p>
+                        </div>
+                    </div>
+                    <div class="resident-contact">
+                        <span><i class="fas fa-phone"></i> +91 32109 87654</span>
+                        <span><i class="fas fa-envelope"></i> rahul.g@example.com</span>
+                    </div>
+                    <div class="resident-actions">
+                        <button class="action-btn favorite"><i class="far fa-star"></i></button>
+                        <button class="action-btn contact"><i class="fas fa-address-card"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pagination">
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn next"><i class="fas fa-angle-right"></i></button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="favorites-tab">
+            <div class="favorites-empty">
+                <div class="empty-icon">
+                    <i class="far fa-star"></i>
+                </div>
+                <h3>No Favorites Yet</h3>
+                <p>Add residents to your favorites for quick access by clicking the star icon.</p>
+            </div>
+        </div>
+
+        <div class="tab-content" id="committee-tab">
+            <div class="committee-list">
+                <div class="committee-card president">
+                    <div class="committee-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="President">
+                        <div class="committee-badge">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                    </div>
+                    <div class="committee-details">
+                        <h3>Vikram Malhotra</h3>
+                        <p class="committee-role">President</p>
+                        <p class="resident-flat"><i class="fas fa-home"></i> C-301</p>
+                        <div class="committee-meta">
+                            <span><i class="fas fa-phone"></i> +91 54321 09876</span>
+                            <span><i class="fas fa-envelope"></i> vikram.m@example.com</span>
+                        </div>
+                        <p class="committee-term">Term: 2024-2026</p>
+                    </div>
+                </div>
+
+                <div class="committee-card secretary">
+                    <div class="committee-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Secretary">
+                        <div class="committee-badge">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                    </div>
+                    <div class="committee-details">
+                        <h3>Amit Patel</h3>
+                        <p class="committee-role">Secretary</p>
+                        <p class="resident-flat"><i class="fas fa-home"></i> B-201</p>
+                        <div class="committee-meta">
+                            <span><i class="fas fa-phone"></i> +91 76543 21098</span>
+                            <span><i class="fas fa-envelope"></i> amit.p@example.com</span>
+                        </div>
+                        <p class="committee-term">Term: 2024-2026</p>
+                    </div>
+                </div>
+
+                <div class="committee-card treasurer">
+                    <div class="committee-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Treasurer">
+                        <div class="committee-badge">
+                            <i class="fas fa-money-check-alt"></i>
+                        </div>
+                    </div>
+                    <div class="committee-details">
+                        <h3>Rahul Gupta</h3>
+                        <p class="committee-role">Treasurer</p>
+                        <p class="resident-flat"><i class="fas fa-home"></i> D-401</p>
+                        <div class="committee-meta">
+                            <span><i class="fas fa-phone"></i> +91 32109 87654</span>
+                            <span><i class="fas fa-envelope"></i> rahul.g@example.com</span>
+                        </div>
+                        <p class="committee-term">Term: 2024-2026</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Modal -->
+        <div class="modal" id="contact-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Contact Resident</h2>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="contact-info">
+                        <div class="contact-avatar">
+                            <img id="contact-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Resident">
+                        </div>
+                        <h3 id="contact-name">Rajesh Kumar</h3>
+                        <p id="contact-flat" class="contact-flat"><i class="fas fa-home"></i> A-101</p>
+                    </div>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-details">
+                                <h4>Phone</h4>
+                                <p id="contact-phone">+91 98765 43210</p>
+                                <div class="method-actions">
+                                    <button class="method-btn call"><i class="fas fa-phone-alt"></i> Call</button>
+                                    <button class="method-btn sms"><i class="fas fa-sms"></i> SMS</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-details">
+                                <h4>Email</h4>
+                                <p id="contact-email">rajesh.k@example.com</p>
+                                <div class="method-actions">
+                                    <button class="method-btn email"><i class="fas fa-envelope"></i> Send Email</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-comment-alt"></i>
+                            </div>
+                            <div class="method-details">
+                                <h4>Message</h4>
+                                <p>Send a message through the platform</p>
+                                <div class="method-actions">
+                                    <button class="method-btn message"><i class="fas fa-comment"></i> Send Message</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="close-details-btn">Close</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 CommunityGate. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../../script.js"></script>
+    <script src="directory.js"></script>
+</body>
+</html>

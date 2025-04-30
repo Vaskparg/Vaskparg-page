@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Forum - CommunityGate</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="forum.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="threejs-background"></div>
+    <header class="header">
+        <h1 class="header-title">CommunityGate</h1>
+        <nav>
+            <ul>
+                <li><a href="../../login.html">Login</a></li>
+                <li><a href="../../signup.html">Signup</a></li>
+                <li class="user-profile">
+                    <a href="#"><i class="fas fa-user-circle"></i> John Doe <i class="fas fa-angle-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#"><i class="fas fa-user"></i> Profile</a>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="../../login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="sidebar">
+        <ul>
+            <li><a href="../../index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="../announcements/announcements.html"><i class="fas fa-bullhorn"></i> Announcements</a></li>
+            <li><a href="../payments/payments.html"><i class="fas fa-money-bill-wave"></i> Payments</a></li>
+            <li><a href="../facilities/facilities.html"><i class="fas fa-calendar-alt"></i> Facility Booking</a></li>
+            <li><a href="../visitors/visitors.html"><i class="fas fa-user-friends"></i> Visitor Management</a></li>
+            <li><a href="../complaints/complaints.html"><i class="fas fa-tools"></i> Service Requests</a></li>
+            <li><a href="../directory/directory.html"><i class="fas fa-address-book"></i> Resident Directory</a></li>
+            <li><a href="../services/services.html"><i class="fas fa-concierge-bell"></i> Local Services</a></li>
+            <li class="active"><a href="forum.html"><i class="fas fa-comments"></i> Community Forum</a></li>
+        </ul>
+    </div>
+
+    <main class="main-content">
+        <div class="page-header">
+            <h1><i class="fas fa-comments"></i> Community Forum</h1>
+            <div class="page-actions">
+                <button class="action-btn primary" id="new-post-btn"><i class="fas fa-plus"></i> New Post</button>
+                <div class="search-container">
+                    <input type="text" id="forum-search" placeholder="Search discussions...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-container">
+                    <select id="forum-filter">
+                        <option value="all">All Categories</option>
+                        <option value="general">General Discussion</option>
+                        <option value="events">Events & Activities</option>
+                        <option value="buy-sell">Buy & Sell</option>
+                        <option value="recommendations">Recommendations</option>
+                        <option value="lost-found">Lost & Found</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="forum-tabs">
+            <button class="tab-btn active" data-tab="all">All Discussions</button>
+            <button class="tab-btn" data-tab="trending">Trending</button>
+            <button class="tab-btn" data-tab="my-posts">My Posts</button>
+            <button class="tab-btn" data-tab="bookmarked">Bookmarked</button>
+        </div>
+
+        <div class="tab-content active" id="all-tab">
+            <div class="forum-categories">
+                <div class="category-card active" data-category="all">
+                    <div class="category-icon">
+                        <i class="fas fa-th-large"></i>
+                    </div>
+                    <p>All</p>
+                </div>
+                <div class="category-card" data-category="general">
+                    <div class="category-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <p>General</p>
+                </div>
+                <div class="category-card" data-category="events">
+                    <div class="category-icon">
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+                    <p>Events</p>
+                </div>
+                <div class="category-card" data-category="buy-sell">
+                    <div class="category-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <p>Buy & Sell</p>
+                </div>
+                <div class="category-card" data-category="recommendations">
+                    <div class="category-icon">
+                        <i class="fas fa-thumbs-up"></i>
+                    </div>
+                    <p>Recommendations</p>
+                </div>
+                <div class="category-card" data-category="lost-found">
+                    <div class="category-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <p>Lost & Found</p>
+                </div>
+            </div>
+
+            <div class="forum-posts">
+                <div class="post-card" data-category="events">
+                    <div class="post-header">
+                        <div class="post-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author">
+                            <div class="author-info">
+                                <h4>Rajesh Kumar</h4>
+                                <p>A-101 • Apr 10, 2025</p>
+                            </div>
+                        </div>
+                        <div class="post-category">
+                            <span class="category-tag events">Events & Activities</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <h3>Community Diwali Celebration</h3>
+                        <p>Hello neighbors! I'm excited to announce that we're organizing a community Diwali celebration on October 25th at the clubhouse. There will be food, music, and activities for children. Please RSVP by October 20th if you plan to attend.</p>
+                        <div class="post-images">
+                            <img src="https://images.pexels.com/photos/2531728/pexels-photo-2531728.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Diwali Celebration">
+                        </div>
+                    </div>
+                    <div class="post-footer">
+                        <div class="post-stats">
+                            <span><i class="fas fa-comment"></i> 15 comments</span>
+                            <span><i class="fas fa-heart"></i> 32 likes</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="action-btn like"><i class="far fa-heart"></i></button>
+                            <button class="action-btn comment"><i class="far fa-comment"></i></button>
+                            <button class="action-btn bookmark"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-card" data-category="buy-sell">
+                    <div class="post-header">
+                        <div class="post-author">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Author">
+                            <div class="author-info">
+                                <h4>Priya Sharma</h4>
+                                <p>A-102 • Apr 8, 2025</p>
+                            </div>
+                        </div>
+                        <div class="post-category">
+                            <span class="category-tag buy-sell">Buy & Sell</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <h3>Selling Furniture - Moving Sale</h3>
+                        <p>We're moving out next month and selling some furniture items in good condition. Available items include a sofa set, dining table with 4 chairs, queen size bed, and a study table. All items are less than 2 years old. Please DM for prices and more details.</p>
+                        <div class="post-images">
+                            <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Furniture">
+                            <img src="https://images.pexels.com/photos/1080696/pexels-photo-1080696.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Furniture">
+                        </div>
+                    </div>
+                    <div class="post-footer">
+                        <div class="post-stats">
+                            <span><i class="fas fa-comment"></i> 8 comments</span>
+                            <span><i class="fas fa-heart"></i> 12 likes</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="action-btn like"><i class="far fa-heart"></i></button>
+                            <button class="action-btn comment"><i class="far fa-comment"></i></button>
+                            <button class="action-btn bookmark"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-card" data-category="recommendations">
+                    <div class="post-header">
+                        <div class="post-author">
+                            <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Author">
+                            <div class="author-info">
+                                <h4>Amit Patel</h4>
+                                <p>B-201 • Apr 5, 2025</p>
+                            </div>
+                        </div>
+                        <div class="post-category">
+                            <span class="category-tag recommendations">Recommendations</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <h3>Looking for a Good Pediatrician</h3>
+                        <p>We recently moved to this community and are looking for a good pediatrician nearby for our 3-year-old daughter. Would appreciate any recommendations from fellow parents. Preferably someone within 5 km radius.</p>
+                    </div>
+                    <div class="post-footer">
+                        <div class="post-stats">
+                            <span><i class="fas fa-comment"></i> 21 comments</span>
+                            <span><i class="fas fa-heart"></i> 18 likes</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="action-btn like"><i class="far fa-heart"></i></button>
+                            <button class="action-btn comment"><i class="far fa-comment"></i></button>
+                            <button class="action-btn bookmark"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-card" data-category="lost-found">
+                    <div class="post-header">
+                        <div class="post-author">
+                            <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Author">
+                            <div class="author-info">
+                                <h4>Neha Singh</h4>
+                                <p>B-202 • Apr 3, 2025</p>
+                            </div>
+                        </div>
+                        <div class="post-category">
+                            <span class="category-tag lost-found">Lost & Found</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <h3>Found: Car Keys near Swimming Pool</h3>
+                        <p>I found a set of car keys near the swimming pool area yesterday evening (April 2nd). It has a Honda key and a couple of other keys with a blue keychain. If these are yours, please contact me with details to identify.</p>
+                        <div class="post-images">
+                            <img src="https://images.pexels.com/photos/5801253/pexels-photo-5801253.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Car Keys">
+                        </div>
+                    </div>
+                    <div class="post-footer">
+                        <div class="post-stats">
+                            <span><i class="fas fa-comment"></i> 5 comments</span>
+                            <span><i class="fas fa-heart"></i> 10 likes</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="action-btn like"><i class="far fa-heart"></i></button>
+                            <button class="action-btn comment"><i class="far fa-comment"></i></button>
+                            <button class="action-btn bookmark"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-card" data-category="general">
+                    <div class="post-header">
+                        <div class="post-author">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Author">
+                            <div class="author-info">
+                                <h4>Vikram Malhotra</h4>
+                                <p>C-301 • Apr 1, 2025</p>
+                            </div>
+                        </div>
+                        <div class="post-category">
+                            <span class="category-tag general">General Discussion</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <h3>Water Supply Timing Change</h3>
+                        <p>I've noticed that the water supply timing has changed recently. It used to come at 6 AM and 6 PM, but now it seems to be coming at 7 AM and 7 PM. Has anyone else noticed this change? Is this a temporary adjustment or a permanent change?</p>
+                    </div>
+                    <div class="post-footer">
+                        <div class="post-stats">
+                            <span><i class="fas fa-comment"></i> 28 comments</span>
+                            <span><i class="fas fa-heart"></i> 45 likes</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="action-btn like"><i class="far fa-heart"></i></button>
+                            <button class="action-btn comment"><i class="far fa-comment"></i></button>
+                            <button class="action-btn bookmark"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pagination">
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn next"><i class="fas fa-angle-right"></i></button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="trending-tab">
+            <div class="trending-posts">
+                <div class="post-card" data-category="general">
+                    <div class="post-header">
+                        <div class="post-author">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Author">
+                            <div class="author-info">
+                                <h4>Vikram Malhotra</h4>
+                                <p>C-301 • Apr 1, 2025</p>
+                            </div>
+                        </div>
+                        <div class="post-category">
+                            <span class="category-tag general">General Discussion</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <h3>Water Supply Timing Change</h3>
+                        <p>I've noticed that the water supply timing has changed recently. It used to come at 6 AM and 6 PM, but now it seems to be coming at 7 AM and 7 PM. Has anyone else noticed this change? Is this a temporary adjustment or a permanent change?</p>
+                    </div>
+                    <div class="post-footer">
+                        <div class="post-stats">
+                            <span><i class="fas fa-comment"></i> 28 comments</span>
+                            <span><i class="fas fa-heart"></i> 45 likes</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="action-btn like"><i class="far fa-heart"></i></button>
+                            <button class="action-btn comment"><i class="far fa-comment"></i></button>
+                            <button class="action-btn bookmark"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-card" data-category="events">
+                    <div class="post-header">
+                        <div class="post-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author">
+                            <div class="author-info">
+                                <h4>Rajesh Kumar</h4>
+                                <p>A-101 • Apr 10, 2025</p>
+                            </div>
+                        </div>
+                        <div class="post-category">
+                            <span class="category-tag events">Events & Activities</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <h3>Community Diwali Celebration</h3>
+                        <p>Hello neighbors! I'm excited to announce that we're organizing a community Diwali celebration on October 25th at the clubhouse. There will be food, music, and activities for children. Please RSVP by October 20th if you plan to attend.</p>
+                        <div class="post-images">
+                            <img src="https://images.pexels.com/photos/2531728/pexels-photo-2531728.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Diwali Celebration">
+                        </div>
+                    </div>
+                    <div class="post-footer">
+                        <div class="post-stats">
+                            <span><i class="fas fa-comment"></i> 15 comments</span>
+                            <span><i class="fas fa-heart"></i> 32 likes</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="action-btn like"><i class="far fa-heart"></i></button>
+                            <button class="action-btn comment"><i class="far fa-comment"></i></button>
+                            <button class="action-btn bookmark"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="my-posts-tab">
+            <div class="my-posts-empty">
+                <div class="empty-icon">
+                    <i class="fas fa-comment-slash"></i>
+                </div>
+                <h3>No Posts Yet</h3>
+                <p>You haven't created any posts yet. Start a discussion or share something with your community.</p>
+                <button class="action-btn primary" id="empty-new-post-btn"><i class="fas fa-plus"></i> Create New Post</button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="bookmarked-tab">
+            <div class="bookmarked-empty">
+                <div class="empty-icon">
+                    <i class="far fa-bookmark"></i>
+                </div>
+                <h3>No Bookmarks Yet</h3>
+                <p>You haven't bookmarked any posts yet. Bookmark posts to save them for later.</p>
+            </div>
+        </div>
+
+        <!-- New Post Modal -->
+        <div class="modal" id="post-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Create New Post</h2>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="post-form">
+                        <div class="form-group">
+                            <label for="post-title">Title</label>
+                            <input type="text" id="post-title" name="title" placeholder="Enter post title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="post-category">Category</label>
+                            <select id="post-category" name="category" required>
+                                <option value="">Select Category</option>
+                                <option value="general">General Discussion</option>
+                                <option value="events">Events & Activities</option>
+                                <option value="buy-sell">Buy & Sell</option>
+                                <option value="recommendations">Recommendations</option>
+                                <option value="lost-found">Lost & Found</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="post-content">Content</label>
+                            <textarea id="post-content" name="content" placeholder="Write your post here..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="post-images">Add Images (Optional)</label>
+                            <input type="file" id="post-images" name="images" multiple accept="image/*">
+                            <p class="form-help">You can upload up to 3 images (max 5MB each)</p>
+                        </div>
+                        <div class="image-preview" id="image-preview"></div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="cancel-btn">Cancel</button>
+                    <button class="proceed-btn">Post</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post Detail Modal -->
+        <div class="modal" id="post-detail-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Post Details</h2>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="post-detail">
+                        <div class="post-detail-header">
+                            <div class="post-author">
+                                <img id="detail-author-img" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author">
+                                <div class="author-info">
+                                    <h4 id="detail-author-name">Rajesh Kumar</h4>
+                                    <p id="detail-author-info">A-101 • Apr 10, 2025</p>
+                                </div>
+                            </div>
+                            <div class="post-category">
+                                <span id="detail-category" class="category-tag events">Events & Activities</span>
+                            </div>
+                        </div>
+                        <div class="post-detail-content">
+                            <h3 id="detail-title">Community Diwali Celebration</h3>
+                            <p id="detail-content">Hello neighbors! I'm excited to announce that we're organizing a community Diwali celebration on October 25th at the clubhouse. There will be food, music, and activities for children. Please RSVP by October 20th if you plan to attend.</p>
+                            <div class="post-detail-images" id="detail-images">
+                                <img src="https://images.pexels.com/photos/2531728/pexels-photo-2531728.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Diwali Celebration">
+                            </div>
+                        </div>
+                        <div class="post-detail-stats">
+                            <span><i class="fas fa-heart"></i> <span id="detail-likes">32</span> likes</span>
+                            <span><i class="fas fa-comment"></i> <span id="detail-comments">15</span> comments</span>
+                        </div>
+                        <div class="post-detail-actions">
+                            <button class="action-btn like" id="detail-like-btn"><i class="far fa-heart"></i> Like</button>
+                            <button class="action-btn bookmark" id="detail-bookmark-btn"><i class="far fa-bookmark"></i> Bookmark</button>
+                            <button class="action-btn share" id="detail-share-btn"><i class="fas fa-share-alt"></i> Share</button>
+                        </div>
+                    </div>
+                    <div class="comments-section">
+                        <h4>Comments</h4>
+                        <div class="comment-form">
+                            <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="User">
+                            <div class="comment-input">
+                                <textarea placeholder="Write a comment..."></textarea>
+                                <button><i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </div>
+                        <div class="comments-list" id="comments-list">
+                            <div class="comment-item">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Commenter">
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <h5>Sunita Verma</h5>
+                                        <p>Apr 10, 2025 • 2:30 PM</p>
+                                    </div>
+                                    <p>This sounds wonderful! My family and I would love to attend. Do we need to bring anything?</p>
+                                    <div class="comment-actions">
+                                        <button>Reply</button>
+                                        <button>Like</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comment-item">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Commenter">
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <h5>Rajesh Kumar</h5>
+                                        <p>Apr 10, 2025 • 3:15 PM</p>
+                                    </div>
+                                    <p>@Sunita Verma Just bring yourselves! We'll have everything arranged. If you'd like to bring sweets to share, that would be welcome but not required.</p>
+                                    <div class="comment-actions">
+                                        <button>Reply</button>
+                                        <button>Like</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comment-item">
+                                <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Commenter">
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <h5>Rahul Gupta</h5>
+                                        <p>Apr 11, 2025 • 10:45 AM</p>
+                                    </div>
+                                    <p>Count me and my family in! Looking forward to celebrating together.</p>
+                                    <div class="comment-actions">
+                                        <button>Reply</button>
+                                        <button>Like</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="load-more">
+                            <button>Load More Comments</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 CommunityGate. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../../script.js"></script>
+    <script src="forum.js"></script>
+</body>
+</html>

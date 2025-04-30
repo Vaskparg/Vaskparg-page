@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Services - CommunityGate</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="threejs-background"></div>
+    <header class="header">
+        <h1 class="header-title">CommunityGate</h1>
+        <nav>
+            <ul>
+                <li><a href="../../login.html">Login</a></li>
+                <li><a href="../../signup.html">Signup</a></li>
+                <li class="user-profile">
+                    <a href="#"><i class="fas fa-user-circle"></i> John Doe <i class="fas fa-angle-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#"><i class="fas fa-user"></i> Profile</a>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="../../login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="sidebar">
+        <ul>
+            <li><a href="../../index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="../announcements/announcements.html"><i class="fas fa-bullhorn"></i> Announcements</a></li>
+            <li><a href="../payments/payments.html"><i class="fas fa-money-bill-wave"></i> Payments</a></li>
+            <li><a href="../facilities/facilities.html"><i class="fas fa-calendar-alt"></i> Facility Booking</a></li>
+            <li><a href="../visitors/visitors.html"><i class="fas fa-user-friends"></i> Visitor Management</a></li>
+            <li><a href="../complaints/complaints.html"><i class="fas fa-tools"></i> Service Requests</a></li>
+            <li><a href="../directory/directory.html"><i class="fas fa-address-book"></i> Resident Directory</a></li>
+            <li class="active"><a href="services.html"><i class="fas fa-concierge-bell"></i> Local Services</a></li>
+            <li><a href="../forum/forum.html"><i class="fas fa-comments"></i> Community Forum</a></li>
+        </ul>
+    </div>
+
+    <main class="main-content">
+        <div class="page-header">
+            <h1><i class="fas fa-concierge-bell"></i> Local Services</h1>
+            <div class="page-actions">
+                <div class="search-container">
+                    <input type="text" id="service-search" placeholder="Search services...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-container">
+                    <select id="service-filter">
+                        <option value="all">All Categories</option>
+                        <option value="household">Household</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="education">Education</option>
+                        <option value="food">Food & Grocery</option>
+                        <option value="beauty">Beauty & Wellness</option>
+                        <option value="transport">Transport</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="services-categories">
+            <div class="category-card active" data-category="all">
+                <div class="category-icon">
+                    <i class="fas fa-th-large"></i>
+                </div>
+                <p>All</p>
+            </div>
+            <div class="category-card" data-category="household">
+                <div class="category-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <p>Household</p>
+            </div>
+            <div class="category-card" data-category="healthcare">
+                <div class="category-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <p>Healthcare</p>
+            </div>
+            <div class="category-card" data-category="education">
+                <div class="category-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <p>Education</p>
+            </div>
+            <div class="category-card" data-category="food">
+                <div class="category-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <p>Food & Grocery</p>
+            </div>
+            <div class="category-card" data-category="beauty">
+                <div class="category-icon">
+                    <i class="fas fa-spa"></i>
+                </div>
+                <p>Beauty & Wellness</p>
+            </div>
+            <div class="category-card" data-category="transport">
+                <div class="category-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <p>Transport</p>
+            </div>
+        </div>
+
+        <div class="services-container">
+            <!-- Household Services -->
+            <div class="service-card" data-category="household">
+                <div class="service-image">
+                    <img src="https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Plumbing Services">
+                </div>
+                <div class="service-details">
+                    <h3>Plumbing Services</h3>
+                    <div class="service-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>4.5 (120 reviews)</span>
+                    </div>
+                    <p class="service-description">Professional plumbing services for all your needs. Leakage repair, pipe installation, bathroom fitting, and more.</p>
+                    <div class="service-meta">
+                        <span><i class="fas fa-user"></i> Sharma Plumbing Co.</span>
+                        <span><i class="fas fa-phone"></i> +91 98765 43210</span>
+                    </div>
+                </div>
+                <div class="service-actions">
+                    <button class="book-btn"><i class="fas fa-calendar-check"></i> Book Now</button>
+                    <button class="details-btn"><i class="fas fa-info-circle"></i> Details</button>
+                </div>
+            </div>
+
+            <div class="service-card" data-category="household">
+                <div class="service-image">
+                    <img src="https://images.pexels.com/photos/6195085/pexels-photo-6195085.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Electrician Services">
+                </div>
+                <div class="service-details">
+                    <h3>Electrician Services</h3>
+                    <div class="service-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <span>4.0 (95 reviews)</span>
+                    </div>
+                    <p class="service-description">Expert electrician services for residential needs. Wiring, installation, repairs, and maintenance services available.</p>
+                    <div class="service-meta">
+                        <span><i class="fas fa-user"></i> Bright Spark Electricals</span>
+                        <span><i class="fas fa-phone"></i> +91 87654 32109</span>
+                    </div>
+                </div>
+                <div class="service-actions">
+                    <button class="book-btn"><i class="fas fa-calendar-check"></i> Book Now</button>
+                    <button class="details-btn"><i class="fas fa-info-circle"></i> Details</button>
+                </div>
+            </div>
+
+            <!-- Healthcare Services -->
+            <div class="service-card" data-category="healthcare">
+                <div class="service-image">
+                    <img src="https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Home Healthcare">
+                </div>
+                <div class="service-details">
+                    <h3>Home Healthcare</h3>
+                    <div class="service-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>4.9 (210 reviews)</span>
+                    </div>
+                    <p class="service-description">Professional healthcare services at your doorstep. Nursing care, physiotherapy, elder care, and medical consultations.</p>
+                    <div class="service-meta">
+                        <span><i class="fas fa-user"></i> CarePlus Healthcare</span>
+                        <span><i class="fas fa-phone"></i> +91 76543 21098</span>
+                    </div>
+                </div>
+                <div class="service-actions">
+                    <button class="book-btn"><i class="fas fa-calendar-check"></i> Book Now</button>
+                    <button class="details-btn"><i class="fas fa-info-circle"></i> Details</button>
+                </div>
+            </div>
+
+            <!-- Education Services -->
+            <div class="service-card" data-category="education">
+                <div class="service-image">
+                    <img src="https://images.pexels.com/photos/5905497/pexels-photo-5905497.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Home Tutoring">
+                </div>
+                <div class="service-details">
+                    <h3>Home Tutoring</h3>
+                    <div class="service-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>4.5 (150 reviews)</span>
+                    </div>
+                    <p class="service-description">Personalized tutoring services for all subjects and grades. Experienced tutors available for regular and exam preparation classes.</p>
+                    <div class="service-meta">
+                        <span><i class="fas fa-user"></i> Excel Education</span>
+                        <span><i class="fas fa-phone"></i> +91 65432 10987</span>
+                    </div>
+                </div>
+                <div class="service-actions">
+                    <button class="book-btn"><i class="fas fa-calendar-check"></i> Book Now</button>
+                    <button class="details-btn"><i class="fas fa-info-circle"></i> Details</button>
+                </div>
+            </div>
+
+            <!-- Food & Grocery Services -->
+            <div class="service-card" data-category="food">
+                <div class="service-image">
+                    <img src="https://images.pexels.com/photos/1005638/pexels-photo-1005638.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Grocery Delivery">
+                </div>
+                <div class="service-details">
+                    <h3>Grocery Delivery</h3>
+                    <div class="service-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <span>4.0 (180 reviews)</span>
+                    </div>
+                    <p class="service-description">Fresh groceries delivered to your doorstep. Wide range of products including fruits, vegetables, dairy, and household essentials.</p>
+                    <div class="service-meta">
+                        <span><i class="fas fa-user"></i> Fresh Basket</span>
+                        <span><i class="fas fa-phone"></i> +91 54321 09876</span>
+                    </div>
+                </div>
+                <div class="service-actions">
+                    <button class="book-btn"><i class="fas fa-calendar-check"></i> Book Now</button>
+                    <button class="details-btn"><i class="fas fa-info-circle"></i> Details</button>
+                </div>
+            </div>
+
+            <!-- Beauty & Wellness Services -->
+            <div class="service-card" data-category="beauty">
+                <div class="service-image">
+                    <img src="https://images.pexels.com/photos/3997391/pexels-photo-3997391.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Home Salon">
+                </div>
+                <div class="service-details">
+                    <h3>Home Salon</h3>
+                    <div class="service-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>4.6 (230 reviews)</span>
+                    </div>
+                    <p class="service-description">Professional salon services at home. Haircuts, styling, facials, manicure, pedicure, and more for men and women.</p>
+                    <div class="service-meta">
+                        <span><i class="fas fa-user"></i> Glamour At Home</span>
+                        <span><i class="fas fa-phone"></i> +91 43210 98765</span>
+                    </div>
+                </div>
+                <div class="service-actions">
+                    <button class="book-btn"><i class="fas fa-calendar-check"></i> Book Now</button>
+                    <button class="details-btn"><i class="fas fa-info-circle"></i> Details</button>
+                </div>
+            </div>
+
+            <!-- Transport Services -->
+            <div class="service-card" data-category="transport">
+                <div class="service-image">
+                    <img src="https://images.pexels.com/photos/2635313/pexels-photo-2635313.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cab Services">
+                </div>
+                <div class="service-details">
+                    <h3>Cab Services</h3>
+                    <div class="service-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <span>4.2 (320 reviews)</span>
+                    </div>
+                    <p class="service-description">Reliable cab services for daily commute, airport transfers, and outstation trips. Clean cars and professional drivers.</p>
+                    <div class="service-meta">
+                        <span><i class="fas fa-user"></i> City Cabs</span>
+                        <span><i class="fas fa-phone"></i> +91 32109 87654</span>
+                    </div>
+                </div>
+                <div class="service-actions">
+                    <button class="book-btn"><i class="fas fa-calendar-check"></i> Book Now</button>
+                    <button class="details-btn"><i class="fas fa-info-circle"></i> Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <button class="pagination-btn active">1</button>
+            <button class="pagination-btn">2</button>
+            <button class="pagination-btn">3</button>
+            <button class="pagination-btn next"><i class="fas fa-angle-right"></i></button>
+        </div>
+
+        <!-- Service Details Modal -->
+        <div class="modal" id="service-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Service Details</h2>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="service-detail-header">
+                        <div class="service-detail-image">
+                            <img id="detail-image" src="https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Service">
+                        </div>
+                        <div class="service-detail-info">
+                            <h3 id="detail-title">Plumbing Services</h3>
+                            <div class="service-detail-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span id="detail-rating">4.5 (120 reviews)</span>
+                            </div>
+                            <div class="service-detail-provider">
+                                <p><i class="fas fa-user"></i> <span id="detail-provider">Sharma Plumbing Co.</span></p>
+                                <p><i class="fas fa-phone"></i> <span id="detail-phone">+91 98765 43210</span></p>
+                                <p><i class="fas fa-envelope"></i> <span id="detail-email">contact@sharmaplumbing.com</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-detail-description">
+                        <h4>Description</h4>
+                        <p id="detail-description">Professional plumbing services for all your needs. Leakage repair, pipe installation, bathroom fitting, and more. Our team of experienced plumbers provides high-quality services with a focus on customer satisfaction. We use the latest tools and techniques to ensure efficient and long-lasting solutions.</p>
+                    </div>
+                    <div class="service-detail-services">
+                        <h4>Services Offered</h4>
+                        <ul id="detail-services">
+                            <li>Leakage Detection and Repair</li>
+                            <li>Pipe Installation and Replacement</li>
+                            <li>Bathroom and Kitchen Fitting</li>
+                            <li>Water Heater Installation and Repair</li>
+                            <li>Drain Cleaning</li>
+                            <li>Emergency Plumbing Services</li>
+                        </ul>
+                    </div>
+                    <div class="service-detail-pricing">
+                        <h4>Pricing</h4>
+                        <table id="detail-pricing">
+                            <tr>
+                                <th>Service</th>
+                                <th>Price</th>
+                            </tr>
+                            <tr>
+                                <td>Consultation</td>
+                                <td>₹300</td>
+                            </tr>
+                            <tr>
+                                <td>Basic Repairs</td>
+                                <td>₹500 - ₹1,000</td>
+                            </tr>
+                            <tr>
+                                <td>Pipe Installation</td>
+                                <td>₹1,500 - ₹3,000</td>
+                            </tr>
+                            <tr>
+                                <td>Bathroom Fitting</td>
+                                <td>₹5,000 - ₹15,000</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="service-detail-reviews">
+                        <h4>Reviews</h4>
+                        <div class="review-list" id="detail-reviews">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="review-user">
+                                        <i class="fas fa-user-circle"></i>
+                                        <span>Rajesh Kumar</span>
+                                    </div>
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <p class="review-date">March 15, 2025</p>
+                                <p class="review-text">Excellent service! The plumber was punctual, professional, and fixed the leakage issue quickly. Highly recommended.</p>
+                            </div>
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="review-user">
+                                        <i class="fas fa-user-circle"></i>
+                                        <span>Priya Sharma</span>
+                                    </div>
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                                <p class="review-date">February 28, 2025</p>
+                                <p class="review-text">Good service but a bit expensive. The work was done well and the plumber was knowledgeable.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="book-service-btn">Book Service</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Booking Modal -->
+        <div class="modal" id="booking-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Book Service</h2>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="booking-form">
+                        <div class="form-group">
+                            <label for="booking-service">Service</label>
+                            <input type="text" id="booking-service" name="service" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-provider">Provider</label>
+                            <input type="text" id="booking-provider" name="provider" readonly>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="booking-date">Date</label>
+                                <input type="date" id="booking-date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="booking-time">Time</label>
+                                <input type="time" id="booking-time" name="time" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-service-type">Service Type</label>
+                            <select id="booking-service-type" name="service_type" required>
+                                <option value="">Select Service Type</option>
+                                <!-- Options will be populated dynamically -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-description">Description</label>
+                            <textarea id="booking-description" name="description" placeholder="Describe your requirement in detail" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-address">Address</label>
+                            <textarea id="booking-address" name="address" placeholder="Your complete address" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-phone">Contact Number</label>
+                            <input type="tel" id="booking-phone" name="phone" placeholder="Your contact number" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="cancel-btn">Cancel</button>
+                    <button class="proceed-btn">Confirm Booking</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 CommunityGate. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../../script.js"></script>
+    <script src="services.js"></script>
+</body>
+</html>

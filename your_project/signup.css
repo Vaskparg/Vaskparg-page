@@ -1,0 +1,230 @@
+:root {
+    --primary-color: #4a6bff;
+    --primary-dark: #3a56d4;
+    --secondary-color: #ff6b6b;
+    --dark-bg: #1a1a2e;
+    --card-bg: #2a2a4e;
+    --light-text: #e0e0e0;
+    --muted-text: #b0b0b0;
+    --border-radius: 10px;
+    --box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 20px 0;
+}
+
+#threejs-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.signup-container {
+    background-color: rgba(26, 26, 26, 0.9);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    width: 400px;
+    position: relative;
+    z-index: 1;
+    box-shadow: var(--box-shadow);
+    max-width: 90%;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-container h1 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-size: 2rem;
+}
+
+.logo-container p {
+    color: var(--muted-text);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--light-text);
+    font-size: 1.5rem;
+}
+
+/* Role selector styles */
+.role-selector {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.role-option {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background-color: rgba(42, 42, 78, 0.5);
+    margin: 0 5px;
+}
+
+.role-option i {
+    font-size: 1.2rem;
+}
+
+.role-option span {
+    font-size: 0.8rem;
+}
+
+.role-option.active {
+    background-color: rgba(74, 107, 255, 0.2);
+    color: var(--primary-color);
+}
+
+/* Input styles */
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted-text);
+}
+
+input {
+    width: 100%;
+    padding: 12px 10px 12px 35px;
+    border: none;
+    background-color: rgba(51, 51, 51, 0.7);
+    color: var(--light-text);
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+input:focus {
+    outline: none;
+    background-color: rgba(51, 51, 51, 0.9);
+    box-shadow: 0 0 0 2px rgba(74, 107, 255, 0.3);
+}
+
+.terms-checkbox {
+    margin: 15px 0;
+    font-size: 0.85rem;
+}
+
+.terms-checkbox label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.terms-checkbox a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.terms-checkbox a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.login-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.back-home {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: var(--muted-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.back-home:hover {
+    color: var(--light-text);
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .signup-container {
+        padding: 30px 20px;
+    }
+
+    .role-selector {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .role-option {
+        margin: 0;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
